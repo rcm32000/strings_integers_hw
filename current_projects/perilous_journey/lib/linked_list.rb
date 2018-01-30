@@ -3,16 +3,24 @@ require './lib/node'
 class LinkedList
 
   attr_reader :head,
-              :count
+              :current_node
 
   def initialize
-    @head   = head
-    @count  = 0
+    @head         = nil
+    @current_node = @head
   end
 
-  def append(name)
-    @count  += 1
-    @head   = Node.new(name)
+  def append(surname)
+    # if @head == nil
+      @head = Node.new(surname)
+    # else
+    #
+    #   if current_node.next = nil
+    #     current_node.next_node = Node.new
+    # else
+    #   current.node = current.node.next_node
+
   end
+
 
 end

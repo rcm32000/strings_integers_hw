@@ -2,25 +2,18 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require './lib/node'
-require './lib/linked_list'
 
 class TestNode < MiniTest::Test
 
-  attr_reader :node
-
-  def setup
-    @node = Node.new("Burke")
-  end
-
-  def test_class_exists
-  assert_instance_of Node, node
-  end
-
-  def test_name
+  def test_node_creation
+    node = Node.new("Burke")
+    assert_equal Node, node.class
     assert_equal "Burke", node.surname
   end
 
-  def test_node
+  def test_next_node
+    node = Node.new("West")
+    assert_equal Node, node.class
     assert_equal nil, node.next_node
   end
 

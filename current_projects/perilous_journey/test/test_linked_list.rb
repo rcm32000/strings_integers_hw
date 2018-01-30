@@ -1,40 +1,27 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require './lib/node'
 require './lib/linked_list'
+require './lib/node'
 
 class TestLinkedList < MiniTest::Test
 
-  attr_reader :list
-
-  def setup
-    @list = LinkedList.new
-  end
-
-  def test
+  def test_list_creation
+    list = LinkedList.new
     assert_instance_of LinkedList, list
   end
 
-  def test_that_head_returns_nil
-    assert_nil list.head
+  def test_add_append_data
+    list = LinkedList.new
+    assert_instance_of  Node, list.append("West")
+    binding.pry
   end
 
-  def test_append_west_to_node
-    assert_instance_of Node, list.append("West")
-    assert_equal "West", list.head.surname
-    assert_nil list.head.next_node
+  def test_count_method
+    
+    assert_equal 1, list.count
   end
 
-  def test_list_count
-    list.append("West")
-    assert_equal 1,list.count
-  end
-
-  def test_list_tos
-    list.append("West")
-    list.to_string("The #{head} family")
-  end
 
 end
 
